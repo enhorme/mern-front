@@ -4,7 +4,9 @@ import styles from "./UserInfo.module.scss";
 export const UserInfo = ({ avatarUrl, fullName, additionalText }) => {
   return (
     <div className={styles.root}>
-      <img className={styles.avatar} src={avatarUrl} alt={fullName} />
+      {avatarUrl ? (
+        <img className={styles.avatar} src={avatarUrl} alt={fullName} />
+      ) : null}
       <div className={styles.userDetails}>
         <span className={styles.userName}>{fullName}</span>
         <span className={styles.additional}>{additionalText}</span>
